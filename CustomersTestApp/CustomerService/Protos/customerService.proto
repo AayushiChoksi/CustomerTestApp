@@ -1,0 +1,13 @@
+syntax = "proto3";
+package siw;
+option csharp_namespace = "IPC";
+
+service CustomerService 
+{
+  
+}
+
+message Customer
+{
+
+}
