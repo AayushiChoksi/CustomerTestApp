@@ -1,32 +1,18 @@
 ﻿<UserControl x:Class="CustomersTestApp.Views.CustomerEditorView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel Orientation="Vertical">
-        <TextBlock Text="Customer editor" FontWeight="Bold" Margin="0,0,0,20"/>
-
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Id:"></TextBlock>
-            <TextBox Text="Id"/>
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="Customer editor" FontWeight="Bold" Margin="5"/>
+            <TextBlock Text="Id:" Margin="5"/>
+            <TextBox Text="{Binding EditableCustomer.Id, Mode=OneWay}" IsReadOnly="True" Margin="5"/>
+            <TextBlock Text="Name:" Margin="5"/>
+            <TextBox Text="{Binding EditableCustomer.Name, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
+            <TextBlock Text="Email:" Margin="5"/>
+            <TextBox Text="{Binding EditableCustomer.Email, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
+            <TextBlock Text="Discount:" Margin="5"/>
+            <TextBox Text="{Binding EditableCustomer.Discount, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
+            <Button Content="Save" Command="{Binding SaveCommand}" Margin="5" IsEnabled="{Binding EditableCustomer.CanSave}"/>
         </StackPanel>
-
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Name:"></TextBlock>
-            <TextBox Text="company name"/>
-        </StackPanel>
-
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="email:"></TextBlock>
-            <TextBox Text="company email"/>
-        </StackPanel>
-
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Content="Save" Click="OnClick"></Button>
-        </StackPanel>
-
-    </StackPanel>
-    
+    </Grid>
 </UserControl>
