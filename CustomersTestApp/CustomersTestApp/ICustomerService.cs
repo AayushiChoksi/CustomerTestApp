@@ -1,4 +1,6 @@
-﻿namespace CustomersTestApp;
+﻿using CustomersTestApp.Models;
+
+namespace CustomersTestApp;
 
 public interface ICustomerService
 {
