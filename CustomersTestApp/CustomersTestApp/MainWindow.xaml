@@ -8,15 +8,17 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
         d:DataContext="{d:DesignInstance viewModels:MainViewModel}">
+    <Window.DataContext>
+        <viewModels:MainViewModel />
+    </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="300"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="*" MinWidth="150"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="2*" MinWidth="300"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="{Binding Description}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Border Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
-                Width="1" BorderBrush="Black" BorderThickness="2"/>
+        <views:CustomerListView Grid.Column="0" Margin="5"/>
+        <GridSplitter Grid.Column="1" Width="5" Background="Gray"/>
         <views:CustomerEditorView Grid.Column="2" Margin="5"/>
     </Grid>
 </Window>
