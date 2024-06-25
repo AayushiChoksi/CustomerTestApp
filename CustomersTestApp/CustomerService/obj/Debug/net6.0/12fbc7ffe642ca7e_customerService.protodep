@@ -1,0 +1,3 @@
+obj\Debug\net6.0\Protos/CustomerService.cs \
+obj\Debug\net6.0\Protos/CustomerServiceGrpc.cs: C:/Users/aayus/.nuget/packages/grpc.tools/2.63.0/build/native/include/google/protobuf/empty.proto\
+ Protos/customerService.proto

@@ -1,0 +1,6 @@
+C:\Users\aayus\OneDrive\Documents\CustomersTestApp\CustomerService\obj\Debug\net6.0\CustomerService.csproj.AssemblyReference.cache
+C:\Users\aayus\OneDrive\Documents\CustomersTestApp\CustomerService\obj\Debug\net6.0\CustomerService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aayus\OneDrive\Documents\CustomersTestApp\CustomerService\obj\Debug\net6.0\CustomerService.AssemblyInfoInputs.cache
+C:\Users\aayus\OneDrive\Documents\CustomersTestApp\CustomerService\obj\Debug\net6.0\CustomerService.AssemblyInfo.cs
+C:\Users\aayus\OneDrive\Documents\CustomersTestApp\CustomerService\obj\Debug\net6.0\CustomerService.csproj.CoreCompileInputs.cache
+C:\Users\aayus\OneDrive\Documents\CustomersTestApp\CustomerService\obj\Debug\net6.0\CustomerService.MvcApplicationPartsAssemblyInfo.cache

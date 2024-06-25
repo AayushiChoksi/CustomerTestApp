@@ -1,0 +1,20 @@
+2024-06-25 01:23:46.315 -04:00 [INF] Starting web host
+2024-06-25 01:23:49.837 -04:00 [INF] Now listening on: http://localhost:5202
+2024-06-25 01:23:49.840 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-25 01:23:49.841 -04:00 [INF] Hosting environment: Development
+2024-06-25 01:23:49.842 -04:00 [INF] Content root path: C:\Users\aayus\OneDrive\Documents\CustomersTestApp\CustomerService
+2024-06-25 01:40:22.317 -04:00 [INF] Application is shutting down...
+2024-06-25 03:32:36.992 -04:00 [INF] Starting web host
+2024-06-25 03:32:37.369 -04:00 [INF] Now listening on: http://localhost:5202
+2024-06-25 03:32:37.378 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-25 03:32:37.380 -04:00 [INF] Hosting environment: Development
+2024-06-25 03:32:37.381 -04:00 [INF] Content root path: C:\Users\aayus\OneDrive\Documents\CustomersTestApp\CustomerService
+2024-06-25 08:46:43.047 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5202/ - null null
+2024-06-25 08:46:43.089 -04:00 [INF] Executing endpoint 'HTTP: GET /'
+2024-06-25 08:46:43.092 -04:00 [INF] Executed endpoint 'HTTP: GET /'
+2024-06-25 08:46:43.094 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5202/ - 200 null null 47.8933ms
+2024-06-25 08:46:43.315 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5202/favicon.ico - null null
+2024-06-25 08:46:43.319 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5202/favicon.ico - 404 0 null 3.6912ms
+2024-06-25 08:46:43.322 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5202/favicon.ico, Response status code: 404
+2024-06-25 08:53:59.210 -04:00 [INF] Application is shutting down...
+2024-06-25 09:07:53.293 -04:00 [INF] Starting web host
