@@ -76,4 +76,4 @@ Sure, here it is formatted with bullet points for easy copy and paste:
 - **Dependency Injection**: Use dependency injection for all services.
 - **Metadata**: Pass the calling application name to the service side and log it.
 
-You can now directly copy and paste these sections into your `README.md` file.
+
