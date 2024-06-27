@@ -28,13 +28,13 @@ Sure, here it is formatted with bullet points for easy copy and paste:
 ### Setting Up the Database
 - Navigate to the `CustomerService` directory.
 - Ensure SQLite is being used and the connection string is correct in `appsettings.json`:
+  
   {
     "ConnectionStrings": {
       "DefaultConnection": "Data Source=customers.db"
     },
-    ...
   }
-  ```
+  
 - Apply migrations and update the database:
   - dotnet ef migrations add InitialCreate
   - dotnet ef database update
