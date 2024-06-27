@@ -22,13 +22,12 @@ CustomerTestApp is a WPF/MVVM/Microservice application for managing customers. I
 Sure, here it is formatted with bullet points for easy copy and paste:
 
 ### Clone the Repository
-- `git clone https://github.com/yourusername/CustomerTestApp.git`
-- `cd CustomerTestApp`
+- git clone https://github.com/yourusername/CustomerTestApp.git
+- cd CustomerTestApp
 
 ### Setting Up the Database
 - Navigate to the `CustomerService` directory.
 - Ensure SQLite is being used and the connection string is correct in `appsettings.json`:
-  ```json
   {
     "ConnectionStrings": {
       "DefaultConnection": "Data Source=customers.db"
@@ -37,8 +36,8 @@ Sure, here it is formatted with bullet points for easy copy and paste:
   }
   ```
 - Apply migrations and update the database:
-  - `dotnet ef migrations add InitialCreate`
-  - `dotnet ef database update`
+  - dotnet ef migrations add InitialCreate
+  - dotnet ef database update
 
 ### Running the Application
 
