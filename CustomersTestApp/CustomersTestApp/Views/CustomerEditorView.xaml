@@ -3,16 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Grid>
         <StackPanel>
-            <TextBlock Text="Customer editor" FontWeight="Bold" Margin="5"/>
-            <TextBlock Text="Id:" Margin="5"/>
-            <TextBox Text="{Binding EditableCustomer.Id, Mode=OneWay}" IsReadOnly="True" Margin="5"/>
-            <TextBlock Text="Name:" Margin="5"/>
-            <TextBox Text="{Binding EditableCustomer.Name, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
-            <TextBlock Text="Email:" Margin="5"/>
-            <TextBox Text="{Binding EditableCustomer.Email, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
-            <TextBlock Text="Discount:" Margin="5"/>
-            <TextBox Text="{Binding EditableCustomer.Discount, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
-            <Button Content="Save" Command="{Binding SaveCommand}" Margin="5" IsEnabled="{Binding EditableCustomer.CanSave}"/>
+            <TextBlock Text="Customer editor"/>
+            <TextBlock Text="Id:"/>
+            <TextBox Text="{Binding EditableCustomer.Id, Mode=OneWay}" IsReadOnly="True"/>
+            <TextBlock Text="Name:"/>
+            <TextBox Text="{Binding EditableCustomer.Name, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock Text="Email:"/>
+            <TextBox Text="{Binding EditableCustomer.Email, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock Text="Discount:"/>
+            <TextBox Text="{Binding EditableCustomer.Discount, UpdateSourceTrigger=PropertyChanged}"/>
+            <Button Content="Save" Command="{Binding SaveCommand}" IsEnabled="{Binding EditableCustomer.CanSave}" 
+                    Width="200" HorizontalAlignment="Center" Margin="10"/>
         </StackPanel>
     </Grid>
 </UserControl>

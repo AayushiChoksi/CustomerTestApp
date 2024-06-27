@@ -5,20 +5,33 @@
         <StackPanel>
             <GroupBox Header="Filter Customers" Margin="5">
                 <StackPanel>
-                    <TextBlock Text="Type to filter by name or email:" Margin="5"/>
-                    <TextBox Text="{Binding FilterText, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
+                    <TextBlock Text="Type to filter by name or email:"/>
+                    <TextBox Text="{Binding FilterText, UpdateSourceTrigger=PropertyChanged}"/>
                     <ComboBox ItemsSource="{Binding FilterOptions}" SelectedItem="{Binding SelectedFilterOption}" Margin="5"/>
                 </StackPanel>
             </GroupBox>
-            <Button Content="Add Customer" Command="{Binding AddCustomerCommand}" Margin="5"/>
+            <GroupBox Header="Add New Customer" Margin="5">
+                <StackPanel>
+                    <TextBlock Text="Name"/>
+                    <TextBox Text="{Binding NewCustomerName, UpdateSourceTrigger=PropertyChanged}"/>
+
+                    <TextBlock Text="Email"/>
+                    <TextBox Text="{Binding NewCustomerEmail, UpdateSourceTrigger=PropertyChanged}"/>
+
+                    <TextBlock Text="Discount"/>
+                    <TextBox Text="{Binding NewCustomerDiscount, UpdateSourceTrigger=PropertyChanged}"/>
+
+                    <Button Content="Add Customer" Command="{Binding AddCustomerCommand}" IsEnabled="{Binding CanAddCustomer}" />
+                </StackPanel>
+            </GroupBox>
             <ListBox ItemsSource="{Binding Customers}" SelectedItem="{Binding SelectedCustomer}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Margin="5">
-                            <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
-                            <TextBlock Text="{Binding Email}" />
-                            <TextBlock Text="{Binding Discount, StringFormat={}{0}%}" />
-                            <Button Content="Remove" Command="{Binding DataContext.RemoveCustomerCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}" IsEnabled="{Binding CanRemove}" />
+                            <TextBlock Text="{Binding Name}"/>
+                            <TextBlock Text="{Binding Email}"/>
+                            <TextBlock Text="{Binding Discount, StringFormat={}{0}%}"/>
+                            <Button Content="Remove" Command="{Binding DataContext.RemoveCustomerCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}" IsEnabled="{Binding CanRemove}" HorizontalAlignment="Left"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

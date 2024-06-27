@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Windows.Input;
 using CustomersTestApp.Commands;
@@ -15,6 +16,11 @@ namespace CustomersTestApp.ViewModels
         private CustomerViewModel _editableCustomer;
         private string _filterText;
         private string _selectedFilterOption;
+
+        private string _newCustomerName;
+        private string _newCustomerEmail;
+        private string _newCustomerDiscount;
+        private bool _canAddCustomer;
 
         public ObservableCollection<CustomerViewModel> Customers
         {
@@ -85,6 +91,49 @@ namespace CustomersTestApp.ViewModels
             }
         }
 
+        public string NewCustomerName
+        {
+            get => _newCustomerName;
+            set
+            {
+                _newCustomerName = value;
+                OnPropertyChanged();
+                ValidateAddCustomer();
+            }
+        }
+
+        public string NewCustomerEmail
+        {
+            get => _newCustomerEmail;
+            set
+            {
+                _newCustomerEmail = value;
+                OnPropertyChanged();
+                ValidateAddCustomer();
+            }
+        }
+
+        public string NewCustomerDiscount
+        {
+            get => _newCustomerDiscount;
+            set
+            {
+                _newCustomerDiscount = value;
+                OnPropertyChanged();
+                ValidateAddCustomer();
+            }
+        }
+
+        public bool CanAddCustomer
+        {
+            get => _canAddCustomer;
+            set
+            {
+                _canAddCustomer = value;
+                OnPropertyChanged();
+            }
+        }
+
         public ICommand AddCustomerCommand { get; }
         public ICommand RemoveCustomerCommand { get; }
         public ICommand SaveCommand { get; }
@@ -95,7 +144,7 @@ namespace CustomersTestApp.ViewModels
         {
             _allCustomers = new ObservableCollection<CustomerViewModel>();
             Customers = new ObservableCollection<CustomerViewModel>();
-            AddCustomerCommand = new RelayCommand(AddCustomer);
+            AddCustomerCommand = new RelayCommand(AddCustomer, () => CanAddCustomer);
             RemoveCustomerCommand = new RelayCommand(RemoveCustomer, CanRemoveCustomer);
             SaveCommand = new RelayCommand(SaveCustomer, CanSaveCustomer);
 
@@ -112,14 +161,19 @@ namespace CustomersTestApp.ViewModels
         {
             var newCustomer = new CustomerViewModel(new Customer
             {
-                Name = "New Customer",
-                Email = "new.customer@example.com",
-                Discount = 0,
+                Name = NewCustomerName,
+                Email = NewCustomerEmail,
+                Discount = int.Parse(NewCustomerDiscount),
                 Can_Remove = true
             });
             _allCustomers.Add(newCustomer);
             ApplyFilter();
             Messenger.Instance.Send(new CustomerAddedMessage(newCustomer));
+
+            // Reset fields
+            NewCustomerName = string.Empty;
+            NewCustomerEmail = string.Empty;
+            NewCustomerDiscount = string.Empty;
         }
 
         private void RemoveCustomer()
@@ -155,6 +209,23 @@ namespace CustomersTestApp.ViewModels
         private bool CanSaveCustomer()
         {
             return EditableCustomer != null && EditableCustomer.CanSave;
+        }
+
+        private void ValidateAddCustomer()
+        {
+            if (string.IsNullOrWhiteSpace(NewCustomerName) ||
+                string.IsNullOrWhiteSpace(NewCustomerEmail) ||
+                !new EmailAddressAttribute().IsValid(NewCustomerEmail) ||
+                !int.TryParse(NewCustomerDiscount, out int discount) ||
+                discount < 0 || discount > 30)
+            {
+                CanAddCustomer = false;
+            }
+            else
+            {
+                CanAddCustomer = true;
+            }
+            ((RelayCommand)AddCustomerCommand).RaiseCanExecuteChanged();
         }
 
         private void ApplyFilter()
