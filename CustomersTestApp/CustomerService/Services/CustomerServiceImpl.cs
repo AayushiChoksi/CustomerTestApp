@@ -1,40 +1,61 @@
-using Grpc.Core;
-using CustomerService;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Grpc.Core;
+using CustomerService;
+using CustomerService.Data;
+using CustomerService.Models;
 using Google.Protobuf.WellKnownTypes;
+using Microsoft.EntityFrameworkCore;
 
 namespace CustomerService.Services
 {
     public class CustomerServiceImpl : CustomerService.CustomerServiceBase
     {
-        private readonly List<Customer> _customers = new List<Customer>
-        {
-            new Customer { Id = Guid.NewGuid().ToString(), Name = "Alice", Email = "alice@example.com", Discount = 10, CanRemove = true },
-            new Customer { Id = Guid.NewGuid().ToString(), Name = "Bob", Email = "bob@example.com", Discount = 15, CanRemove = false }
-        };
+        private readonly CustomerContext _context;
 
-        public override Task<CustomerResponse> GetCustomer(CustomerRequest request, ServerCallContext context)
+        public CustomerServiceImpl(CustomerContext context)
         {
-            var customer = _customers.FirstOrDefault(c => c.Id == request.Id);
+            _context = context;
+        }
+
+        public override async Task<CustomerResponse> GetCustomer(CustomerRequest request, ServerCallContext context)
+        {
+            var customer = await _context.Customers.FindAsync(request.Id);
             if (customer == null)
             {
                 throw new RpcException(new Status(StatusCode.NotFound, "Customer not found"));
             }
 
-            return Task.FromResult(new CustomerResponse { Customer = customer });
+            return new CustomerResponse
+            {
+                Customer = new Customer
+                {
+                    Id = customer.Id,
+                    Name = customer.Name,
+                    Email = customer.Email,
+                    Discount = customer.Discount,
+                    CanRemove = customer.CanRemove
+                }
+            };
         }
 
-        public override Task<CustomersResponse> GetAllCustomers(Empty request, ServerCallContext context)
+        public override async Task<CustomersResponse> GetAllCustomers(Empty request, ServerCallContext context)
         {
+            var customers = await _context.Customers.ToListAsync();
             var response = new CustomersResponse();
-            response.Customers.AddRange(_customers);
-            return Task.FromResult(response);
+            response.Customers.AddRange(customers.Select(customer => new Customer
+            {
+                Id = customer.Id,
+                Name = customer.Name,
+                Email = customer.Email,
+                Discount = customer.Discount,
+                CanRemove = customer.CanRemove
+            }));
+            return response;
         }
 
-        public override Task<CustomerResponse> CreateCustomer(CreateCustomerRequest request, ServerCallContext context)
+        public override async Task<CustomerResponse> CreateCustomer(CreateCustomerRequest request, ServerCallContext context)
         {
             var newCustomer = new Customer
             {
@@ -45,16 +66,29 @@ namespace CustomerService.Services
                 CanRemove = request.CanRemove
             };
 
-            _customers.Add(newCustomer);
+            _context.Customers.Add(newCustomer);
+            await _context.SaveChangesAsync();
+            Console.WriteLine($"Customer added: {newCustomer.Id}");
 
-            return Task.FromResult(new CustomerResponse { Customer = newCustomer });
+            return new CustomerResponse
+            {
+                Customer = new Customer
+                {
+                    Id = newCustomer.Id,
+                    Name = newCustomer.Name,
+                    Email = newCustomer.Email,
+                    Discount = newCustomer.Discount,
+                    CanRemove = newCustomer.CanRemove
+                }
+            };
         }
 
-        public override Task<CustomerResponse> UpdateCustomer(UpdateCustomerRequest request, ServerCallContext context)
+        public override async Task<CustomerResponse> UpdateCustomer(UpdateCustomerRequest request, ServerCallContext context)
         {
-            var customer = _customers.FirstOrDefault(c => c.Id == request.Id);
+            var customer = await _context.Customers.FindAsync(request.Id);
             if (customer == null)
             {
+                Console.WriteLine($"Customer not found: {request.Id}");
                 throw new RpcException(new Status(StatusCode.NotFound, "Customer not found"));
             }
 
@@ -63,20 +97,64 @@ namespace CustomerService.Services
             customer.Discount = request.Discount;
             customer.CanRemove = request.CanRemove;
 
-            return Task.FromResult(new CustomerResponse { Customer = customer });
+            await _context.SaveChangesAsync();
+
+            return new CustomerResponse
+            {
+                Customer = new Customer
+                {
+                    Id = customer.Id,
+                    Name = customer.Name,
+                    Email = customer.Email,
+                    Discount = customer.Discount,
+                    CanRemove = customer.CanRemove
+                }
+            };
         }
 
-        public override Task<Empty> DeleteCustomer(DeleteCustomerRequest request, ServerCallContext context)
+        public override async Task<Empty> DeleteCustomer(DeleteCustomerRequest request, ServerCallContext context)
         {
-            var customer = _customers.FirstOrDefault(c => c.Id == request.Id);
+            var customer = await _context.Customers.FindAsync(request.Id);
             if (customer == null || !customer.CanRemove)
             {
+                Console.WriteLine($"Customer not found or cannot be removed: {request.Id}");
                 throw new RpcException(new Status(StatusCode.NotFound, "Customer not found or cannot be removed"));
             }
 
-            _customers.Remove(customer);
+            _context.Customers.Remove(customer);
+            await _context.SaveChangesAsync();
+            Console.WriteLine($"Customer removed: {request.Id}");
 
-            return Task.FromResult(new Empty());
+            return new Empty();
+        }
+
+        public override async Task<CustomersResponse> FilterCustomers(FilterCustomersRequest request, ServerCallContext context)
+        {
+            var query = _context.Customers.AsQueryable();
+
+            if (!string.IsNullOrEmpty(request.Name))
+            {
+                query = query.Where(c => c.Name.Contains(request.Name));
+            }
+
+            if (!string.IsNullOrEmpty(request.Email))
+            {
+                query = query.Where(c => c.Email.Contains(request.Email));
+            }
+
+            var customers = await query.ToListAsync();
+
+            var response = new CustomersResponse();
+            response.Customers.AddRange(customers.Select(customer => new Customer
+            {
+                Id = customer.Id,
+                Name = customer.Name,
+                Email = customer.Email,
+                Discount = customer.Discount,
+                CanRemove = customer.CanRemove
+            }));
+
+            return response;
         }
     }
 }

@@ -36,18 +36,26 @@ namespace CustomerService {
             "CmNhbl9yZW1vdmUYBCABKAgiZgoVVXBkYXRlQ3VzdG9tZXJSZXF1ZXN0EgoK",
             "AmlkGAEgASgJEgwKBG5hbWUYAiABKAkSDQoFZW1haWwYAyABKAkSEAoIZGlz",
             "Y291bnQYBCABKAUSEgoKY2FuX3JlbW92ZRgFIAEoCCIjChVEZWxldGVDdXN0",
-            "b21lclJlcXVlc3QSCgoCaWQYASABKAkywAMKD0N1c3RvbWVyU2VydmljZRJS",
-            "CgtHZXRDdXN0b21lchIgLkN1c3RvbWVyU2VydmljZS5DdXN0b21lclJlcXVl",
-            "c3QaIS5DdXN0b21lclNlcnZpY2UuQ3VzdG9tZXJSZXNwb25zZRJNCg9HZXRB",
-            "bGxDdXN0b21lcnMSFi5nb29nbGUucHJvdG9idWYuRW1wdHkaIi5DdXN0b21l",
-            "clNlcnZpY2UuQ3VzdG9tZXJzUmVzcG9uc2USWwoOQ3JlYXRlQ3VzdG9tZXIS",
-            "Ji5DdXN0b21lclNlcnZpY2UuQ3JlYXRlQ3VzdG9tZXJSZXF1ZXN0GiEuQ3Vz",
-            "dG9tZXJTZXJ2aWNlLkN1c3RvbWVyUmVzcG9uc2USWwoOVXBkYXRlQ3VzdG9t",
-            "ZXISJi5DdXN0b21lclNlcnZpY2UuVXBkYXRlQ3VzdG9tZXJSZXF1ZXN0GiEu",
-            "Q3VzdG9tZXJTZXJ2aWNlLkN1c3RvbWVyUmVzcG9uc2USUAoORGVsZXRlQ3Vz",
-            "dG9tZXISJi5DdXN0b21lclNlcnZpY2UuRGVsZXRlQ3VzdG9tZXJSZXF1ZXN0",
-            "GhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5QhKqAg9DdXN0b21lclNlcnZpY2Vi",
-            "BnByb3RvMw=="));
+            "b21lclJlcXVlc3QSCgoCaWQYASABKAkiRwoWRmlsdGVyQ3VzdG9tZXJzUmVx",
+            "dWVzdBIMCgRuYW1lGAEgASgJEg0KBWVtYWlsGAIgASgJEhAKCGRpc2NvdW50",
+            "GAMgASgFMtoFCg9DdXN0b21lclNlcnZpY2USUgoLR2V0Q3VzdG9tZXISIC5D",
+            "dXN0b21lclNlcnZpY2UuQ3VzdG9tZXJSZXF1ZXN0GiEuQ3VzdG9tZXJTZXJ2",
+            "aWNlLkN1c3RvbWVyUmVzcG9uc2USTQoPR2V0QWxsQ3VzdG9tZXJzEhYuZ29v",
+            "Z2xlLnByb3RvYnVmLkVtcHR5GiIuQ3VzdG9tZXJTZXJ2aWNlLkN1c3RvbWVy",
+            "c1Jlc3BvbnNlElsKDkNyZWF0ZUN1c3RvbWVyEiYuQ3VzdG9tZXJTZXJ2aWNl",
+            "LkNyZWF0ZUN1c3RvbWVyUmVxdWVzdBohLkN1c3RvbWVyU2VydmljZS5DdXN0",
+            "b21lclJlc3BvbnNlElsKDlVwZGF0ZUN1c3RvbWVyEiYuQ3VzdG9tZXJTZXJ2",
+            "aWNlLlVwZGF0ZUN1c3RvbWVyUmVxdWVzdBohLkN1c3RvbWVyU2VydmljZS5D",
+            "dXN0b21lclJlc3BvbnNlElAKDkRlbGV0ZUN1c3RvbWVyEiYuQ3VzdG9tZXJT",
+            "ZXJ2aWNlLkRlbGV0ZUN1c3RvbWVyUmVxdWVzdBoWLmdvb2dsZS5wcm90b2J1",
+            "Zi5FbXB0eRJeCg9GaWx0ZXJDdXN0b21lcnMSJy5DdXN0b21lclNlcnZpY2Uu",
+            "RmlsdGVyQ3VzdG9tZXJzUmVxdWVzdBoiLkN1c3RvbWVyU2VydmljZS5DdXN0",
+            "b21lcnNSZXNwb25zZRJRChJHZXRDdXN0b21lcnNTdHJlYW0SFi5nb29nbGUu",
+            "cHJvdG9idWYuRW1wdHkaIS5DdXN0b21lclNlcnZpY2UuQ3VzdG9tZXJSZXNw",
+            "b25zZTABEmUKFUNyZWF0ZUN1c3RvbWVyc1N0cmVhbRImLkN1c3RvbWVyU2Vy",
+            "dmljZS5DcmVhdGVDdXN0b21lclJlcXVlc3QaIi5DdXN0b21lclNlcnZpY2Uu",
+            "Q3VzdG9tZXJzUmVzcG9uc2UoAUISqgIPQ3VzdG9tZXJTZXJ2aWNlYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -57,7 +65,8 @@ namespace CustomerService {
             new pbr::GeneratedClrTypeInfo(typeof(global::CustomerService.CustomersResponse), global::CustomerService.CustomersResponse.Parser, new[]{ "Customers" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::CustomerService.CreateCustomerRequest), global::CustomerService.CreateCustomerRequest.Parser, new[]{ "Name", "Email", "Discount", "CanRemove" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::CustomerService.UpdateCustomerRequest), global::CustomerService.UpdateCustomerRequest.Parser, new[]{ "Id", "Name", "Email", "Discount", "CanRemove" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::CustomerService.DeleteCustomerRequest), global::CustomerService.DeleteCustomerRequest.Parser, new[]{ "Id" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::CustomerService.DeleteCustomerRequest), global::CustomerService.DeleteCustomerRequest.Parser, new[]{ "Id" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::CustomerService.FilterCustomersRequest), global::CustomerService.FilterCustomersRequest.Parser, new[]{ "Name", "Email", "Discount" }, null, null, null, null)
           }));
     }
     #endregion
@@ -1790,6 +1799,270 @@ namespace CustomerService {
             break;
           case 10: {
             Id = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class FilterCustomersRequest : pb::IMessage<FilterCustomersRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<FilterCustomersRequest> _parser = new pb::MessageParser<FilterCustomersRequest>(() => new FilterCustomersRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<FilterCustomersRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::CustomerService.CustomerServiceReflection.Descriptor.MessageTypes[7]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FilterCustomersRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FilterCustomersRequest(FilterCustomersRequest other) : this() {
+      name_ = other.name_;
+      email_ = other.email_;
+      discount_ = other.discount_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FilterCustomersRequest Clone() {
+      return new FilterCustomersRequest(this);
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 1;
+    private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "email" field.</summary>
+    public const int EmailFieldNumber = 2;
+    private string email_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Email {
+      get { return email_; }
+      set {
+        email_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "discount" field.</summary>
+    public const int DiscountFieldNumber = 3;
+    private int discount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Discount {
+      get { return discount_; }
+      set {
+        discount_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as FilterCustomersRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(FilterCustomersRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Name != other.Name) return false;
+      if (Email != other.Email) return false;
+      if (Discount != other.Discount) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Email.Length != 0) hash ^= Email.GetHashCode();
+      if (Discount != 0) hash ^= Discount.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Name.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Name);
+      }
+      if (Email.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Email);
+      }
+      if (Discount != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Discount);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Name.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Name);
+      }
+      if (Email.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Email);
+      }
+      if (Discount != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Discount);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (Email.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Email);
+      }
+      if (Discount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Discount);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(FilterCustomersRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.Email.Length != 0) {
+        Email = other.Email;
+      }
+      if (other.Discount != 0) {
+        Discount = other.Discount;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Name = input.ReadString();
+            break;
+          }
+          case 18: {
+            Email = input.ReadString();
+            break;
+          }
+          case 24: {
+            Discount = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Name = input.ReadString();
+            break;
+          }
+          case 18: {
+            Email = input.ReadString();
+            break;
+          }
+          case 24: {
+            Discount = input.ReadInt32();
             break;
           }
         }

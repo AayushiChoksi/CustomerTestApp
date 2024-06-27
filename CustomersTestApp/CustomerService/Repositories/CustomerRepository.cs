@@ -1,51 +1,58 @@
-using CustomerService.Models;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+using CustomerService.Data;
+using CustomerService.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace CustomerService.Repositories
 {
-    public class CustomerRepository
+    public class CustomerRepository : ICustomerRepository
     {
-        private readonly List<Customer> _customers = new List<Customer>
-        {
-            new Customer { Id = Guid.NewGuid().ToString(), Name = "Alice", Email = "alice@example.com", Discount = 10, CanRemove = true },
-            new Customer { Id = Guid.NewGuid().ToString(), Name = "Bob", Email = "bob@example.com", Discount = 15, CanRemove = false }
-        };
+        private readonly CustomerContext _context;
 
-        public List<Customer> GetCustomers()
+        public CustomerRepository(CustomerContext context)
         {
-            return _customers;
+            _context = context;
         }
 
-        public Customer GetCustomerById(string id)
+        public async Task<Customer> GetCustomerAsync(string id)
         {
-            return _customers.FirstOrDefault(c => c.Id == id);
+            return await _context.Customers.FindAsync(id);
         }
 
-        public void AddCustomer(Customer customer)
+        public async Task<List<Customer>> GetAllCustomersAsync()
         {
-            _customers.Add(customer);
+            return await _context.Customers.ToListAsync();
         }
 
-        public void UpdateCustomer(Customer customer)
+        public async Task AddCustomerAsync(Customer customer)
         {
-            var existingCustomer = _customers.FirstOrDefault(c => c.Id == customer.Id);
-            if (existingCustomer != null)
+            _context.Customers.Add(customer);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task UpdateCustomerAsync(Customer customer)
+        {
+            _context.Customers.Update(customer);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task DeleteCustomerAsync(string id)
+        {
+            var customer = await _context.Customers.FindAsync(id);
+            if (customer != null)
             {
-                existingCustomer.Name = customer.Name;
-                existingCustomer.Email = customer.Email;
-                existingCustomer.Discount = customer.Discount;
-                existingCustomer.CanRemove = customer.CanRemove;
+                _context.Customers.Remove(customer);
+                await _context.SaveChangesAsync();
             }
         }
 
-        public void DeleteCustomer(string id)
+        public async Task<List<Customer>> FilterCustomersAsync(string name, string email)
         {
-            var customer = _customers.FirstOrDefault(c => c.Id == id);
-            if (customer != null && customer.CanRemove)
-            {
-                _customers.Remove(customer);
-            }
+            return await _context.Customers
+                .Where(c => c.Name.Contains(name) || c.Email.Contains(email))
+                .ToListAsync();
         }
     }
 }
