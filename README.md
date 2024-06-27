@@ -36,20 +36,21 @@ cd CustomerTestApp
 }
 
 3) Apply migrations and update the database:
-dotnet ef migrations add InitialCreate
-dotnet ef database update
+
+1. dotnet ef migrations add InitialCreate
+2. dotnet ef database update
 
 ### Running the Application
-Running the Customer Service
-Navigate to the CustomerService directory.
-Run the service:
+1. Running the Customer Service
+2. Navigate to the CustomerService directory.
+3. Run the service:
 dotnet run
-The service will start and listen on the configured port.
+4. The service will start and listen on the configured port.
 
 ### Running the WPF Application
-Open the solution in Visual Studio.
-Set CustomerTestApp as the startup project.
-Run the application from Visual Studio.
+1. Open the solution in Visual Studio.
+2. Set CustomerTestApp as the startup project.
+3. Run the application from Visual Studio.
 
 Usage
 Add Customer: Click on the "Add Customer" button to add a new customer.
