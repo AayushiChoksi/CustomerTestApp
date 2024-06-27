@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcClient";
+
+package CustomerService;
+
+import "google/protobuf/empty.proto";
+
+message Customer {
+    string id = 1;
+    string name = 2;
+    string email = 3;
+    int32 discount = 4;
+    bool can_remove = 5;
+}
+
+message CustomerRequest {
+    string id = 1;
+}
+
+message CustomerResponse {
+    Customer customer = 1;
+}
+
+message CustomersResponse {
+    repeated Customer customers = 1;
+}
+
+message CreateCustomerRequest {
+    string name = 1;
+    string email = 2;
+    int32 discount = 3;
+    bool can_remove = 4;
+}
+
+message UpdateCustomerRequest {
+    string id = 1;
+    string name = 2;
+    string email = 3;
+    int32 discount = 4;
+    bool can_remove = 5;
+}
+
+message DeleteCustomerRequest {
+    string id = 1;
+}
+
+message FilterCustomersRequest {
+    string name = 1;
+    string email = 2;
+}
+
+service CustomerService {
+    rpc GetCustomer (CustomerRequest) returns (CustomerResponse);
+    rpc GetAllCustomers (google.protobuf.Empty) returns (CustomersResponse);
+    rpc CreateCustomer (CreateCustomerRequest) returns (CustomerResponse);
+    rpc UpdateCustomer (UpdateCustomerRequest) returns (CustomerResponse);
+    rpc DeleteCustomer (DeleteCustomerRequest) returns (google.protobuf.Empty);
+    rpc FilterCustomers (FilterCustomersRequest) returns (CustomersResponse);
+    rpc GetCustomersStream (google.protobuf.Empty) returns (stream CustomerResponse);
+    rpc CreateCustomersStream (stream CreateCustomerRequest) returns (CustomersResponse);
+}
