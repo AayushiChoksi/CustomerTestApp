@@ -19,7 +19,6 @@ CustomerTestApp is a WPF/MVVM/Microservice application for managing customers. I
 - Visual Studio 2022
 - SQLite
 
-Sure, here it is formatted with bullet points for easy copy and paste:
 
 ### Clone the Repository
 - git clone https://github.com/yourusername/CustomerTestApp.git
